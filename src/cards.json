@@ -1,0 +1,130 @@
+[
+  {
+    "id": 0,
+    "item": {
+      "twinReference": "p0",
+      "imgSource": "./assets/img/diamond_sword.png",
+      "imgAlt": "Une épée en diamant"
+    }
+  },
+  {
+    "id": 1,
+    "item": {
+      "twinReference": "p0",
+      "imgSource": "./assets/img/diamond_sword.png",
+      "imgAlt": "Une épée en diamant"
+    }
+  },
+  {
+    "id": 2,
+    "item": {
+      "twinReference": "p1",
+      "imgSource": "./assets/img/iron_door.png",
+      "imgAlt": "Une porte en fer"
+    }
+  },
+  {
+    "id": 3,
+    "item": {
+      "twinReference": "p1",
+      "imgSource": "./assets/img/iron_door.png",
+      "imgAlt": "Une porte en fer"
+    }
+  },
+  {
+    "id": 4,
+    "item": {
+      "twinReference": "p2",
+      "imgSource": "./assets/img/iron_hoe.png",
+      "imgAlt": "Une faux en fer"
+    }
+  },
+  {
+    "id": 5,
+    "item": {
+      "twinReference": "p2",
+      "imgSource": "./assets/img/iron_hoe.png",
+      "imgAlt": "Une faux en fer"
+    }
+  },
+  {
+    "id": 6,
+    "item": {
+      "twinReference": "p3",
+      "imgSource": "./assets/img/netherite_ingot.png",
+      "imgAlt": "Un lingot de Netherite"
+    }
+  },
+  {
+    "id": 7,
+    "item": {
+      "twinReference": "p3",
+      "imgSource": "./assets/img/netherite_ingot.png",
+      "imgAlt": "Un lingot de Netherite"
+    }
+  },
+  {
+    "id": 8,
+    "item": {
+      "twinReference": "p4",
+      "imgSource": "./assets/img/netherite_sword.png",
+      "imgAlt": "Une épée en Netherite"
+    }
+  },
+  {
+    "id": 9,
+    "item": {
+      "twinReference": "p4",
+      "imgSource": "./assets/img/netherite_sword.png",
+      "imgAlt": "Une épée en Netherite"
+    }
+  },
+  {
+    "id": 10,
+    "item": {
+      "twinReference": "p5",
+      "imgSource": "./assets/img/stone_shovel.png",
+      "imgAlt": "Une pelle en pierre"
+    }
+  },
+  {
+    "id": 11,
+    "item": {
+      "twinReference": "p5",
+      "imgSource": "./assets/img/stone_shovel.png",
+      "imgAlt": "Une pelle en pierre"
+    }
+  },
+  {
+    "id": 12,
+    "item": {
+      "twinReference": "p6",
+      "imgSource": "./assets/img/stone_sword.png",
+      "imgAlt": "Une épée en pierre"
+    }
+  },
+  {
+    "id": 13,
+    "item": {
+      "twinReference": "p6",
+      "imgSource": "./assets/img/stone_sword.png",
+      "imgAlt": "Une épée en pierre"
+    }
+  },
+  {
+    "id": 14,
+    "item": {
+      "twinReference": "p7",
+      "imgSource": "./assets/img/wooden_pickaxe.png",
+      "imgAlt": "Une pioche en bois"
+    }
+  },
+  {
+    "id": 15,
+    "item": {
+      "twinReference": "p7",
+      "imgSource": "./assets/img/wooden_pickaxe.png",
+      "imgAlt": "Une pioche en bois"
+    }
+  }
+]

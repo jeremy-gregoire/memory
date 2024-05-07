@@ -1,0 +1,33 @@
+.winning-modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 666;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 1.75rem;
+}
+
+.winning-modal.show {
+  display: flex;
+}
+
+.winning-modal__content {
+  background-color: white;
+  padding: 2rem;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 0.5rem;
+  min-width: 250px;
+  box-shadow: 0 0 15px 2px hsla(0, 0%, 0%, 50%);
+  background-image: url('./assets/img/options_background.png');
+  background-size: var(--cell-size);
+}

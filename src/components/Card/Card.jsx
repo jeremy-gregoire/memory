@@ -1,13 +1,12 @@
-import { useState } from 'react';
 import './Card.css';
 
-export default function Card({ imgSource, imgAlt }) {
+export default function Card({ item, isFlipped, onCardClick }) {
   return (
-    <div className='card'>
-      <div className='card-inner'>
-        <div className='card-front'></div>
-        <div className='card-back'>
-          <img src={imgSource} alt={imgAlt} />
+    <div onClick={() => onCardClick(item)} className={`card ${isFlipped ? 'card--flipped' : ''}`}>
+      <div className='card__content'>
+        <div className='card__front-face'>?</div>
+        <div className='card__back-face'>
+          <img src={item.imgSource} alt={item.imgAlt} />
         </div>
       </div>
     </div>
