@@ -1,0 +1,21 @@
+.btn-minecraft {
+  background-color: darkgray;
+  border: none;
+  border-bottom: 10px solid gray;
+  min-width: 150px;
+  padding: 1rem;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Pixelify Sans', sans-serif;
+  border-radius: 5px;
+}
+
+.btn-minecraft:hover {
+  border-bottom: 5px solid gray;
+  cursor: pointer;
+}
+
+.btn-minecraft:active {
+  border-bottom: none;
+}

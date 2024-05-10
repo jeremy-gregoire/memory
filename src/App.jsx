@@ -7,6 +7,8 @@ import WinningModal from './components/WinningModal/WinningModal';
 
 import './App.css';
 
+const numberFormatter = Intl.NumberFormat('fr-FR');
+
 const shuffleArray = (array, n) => {
   if (n > array.length) {
     n = array.length;
@@ -23,11 +25,11 @@ const shuffleArray = (array, n) => {
 };
 
 export default function App({ registryCards }) {
-  const maxGameDuration = 300;
-  const pointPerPair = 10;
-  const secondsFactor = 1.5;
-  const maxError = 10;
-  const penalityPerError = 10;
+  const maxGameDuration = 180;
+  const pointPerPair = 50;
+  const secondsFactor = 6;
+  const maxError = 4;
+  const penalityPerError = 20;
 
   // A random cards array of beginnings
   const [cards, setCards] = useState(() => shuffleArray(registryCards, registryCards.length));
@@ -96,7 +98,7 @@ export default function App({ registryCards }) {
    * @param {object} card A card object.
    */
   const addToOpenCards = (card) => {
-    if (openCards.length < 2 && !openCards.includes(card)) {
+    if (openCards.length < 2 && !openCards.includes(card) && !clearCards.includes(card)) {
       setOpenCards([...openCards, card]);
     }
   };
@@ -160,7 +162,7 @@ export default function App({ registryCards }) {
         if (openCards[0].item.twinReference === openCards[1].item.twinReference) {
           setClearCards([...clearCards, openCards[0], openCards[1]]);
           setOpenCards([]);
-          setScore((prev) => prev + 10);
+          setScore((prev) => prev + pointPerPair);
         } else {
           setTimeout(() => {
             setOpenCards([]);
@@ -178,10 +180,7 @@ export default function App({ registryCards }) {
       setFirstTimeStarted(false);
       win(true);
       startGameCountdown(false);
-
       setFinalScore(() => calculateFinalScore(clearCards.length / 2, gameCountdown, errorCount));
-      console.log('finalScore:', finalScore);
-
       showModal(true);
     }
   }, [clearCards]);
@@ -204,7 +203,7 @@ export default function App({ registryCards }) {
   }, [canGameCountdownStart, gameCountdown]);
 
   useEffect(() => {
-    if (errorCount === 10 && clearCards.length !== cards.length) {
+    if (errorCount >= maxError && clearCards.length !== cards.length) {
       start(false);
       win(false);
       startGameCountdown(false);
@@ -229,11 +228,11 @@ export default function App({ registryCards }) {
           <div className='sidebar__content'>
             <div className='sidebar__content-row'>
               <span className='sidebar__content-col'>Score : </span>
-              <span className='sidebar__content-col'>{score}</span>
+              <span className='sidebar__content-col'>{numberFormatter.format(score)}</span>
             </div>
             <div className='sidebar__content-row'>
               <span className='sidebar__content-col'>Score Élevé : </span>
-              <span className='sidebar__content-col'>{highscore}</span>
+              <span className='sidebar__content-col'>{numberFormatter.format(highscore)}</span>
             </div>
             <div className='sidebar__content-row'>
               <span className='sidebar__content-col'>Temps restant : </span>
@@ -263,6 +262,7 @@ export default function App({ registryCards }) {
         </div>
       </div>
       <WinningModal
+        formatter={numberFormatter}
         title={firstTimeStarted ? 'Jouer' : hasWin ? 'Vous avez gagné !' : 'Vous avez perdu !'}
         score={score}
         finalScore={finalScore}
